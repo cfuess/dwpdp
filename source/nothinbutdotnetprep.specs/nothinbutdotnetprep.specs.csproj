@@ -76,6 +76,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DirectoryPrinterSpecs.cs" />
     <Compile Include="MovieLibrarySpecs.cs" />
     <Compile Include="utility\CollectionExtensions.cs" />
   </ItemGroup>
