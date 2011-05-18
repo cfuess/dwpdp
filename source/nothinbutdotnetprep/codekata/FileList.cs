@@ -3,13 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using nothinbutdotnetprep.infrastructure;
+using System.IO;
 
 namespace nothinbutdotnetprep.codekata
 {
-  class FileList
+  public class FileList
   {
     readonly IList<FileItem> files;
 
+    public FileList()
+    {
+      string[] sfiles;
+      sfiles = Directory.GetFiles(@"D:\Dropbox\Nothin But .NET\");
+      foreach (var s in sfiles)
+      {
+        FileInfo f = new FileInfo(s);
+        
+        files.Add(new FileItem());
+
+      }
+
+    }
+    
     public FileList(IList<FileItem> list_of_files)
     {
       files = list_of_files;
