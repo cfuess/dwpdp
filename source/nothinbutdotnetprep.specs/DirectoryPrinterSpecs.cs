@@ -25,12 +25,13 @@ namespace nothinbutdotnetprep.specs
     {
       static IEnumerable<FileItem> all_files;
 
-      Establish c = () =>
-        Enumerable.Range(1, 100).each(x => file_collection.Add(new FileItem()));
+      private Establish c = () =>
+      {
+        FileList all = new FileList(@"D:\Dropbox\Nothin But .NET\");
+      };
 
       Because b = () =>
         all_files = sut.all_files();
-
 
       It should_iterate = () =>
       {

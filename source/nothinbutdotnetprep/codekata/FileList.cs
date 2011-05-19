@@ -11,15 +11,15 @@ namespace nothinbutdotnetprep.codekata
   {
     readonly IList<FileItem> files;
 
-    public FileList()
+    public FileList(string path)
     {
       string[] sfiles;
-      sfiles = Directory.GetFiles(@"D:\Dropbox\Nothin But .NET\");
+      sfiles = Directory.GetFiles(path);
       foreach (var s in sfiles)
       {
         FileInfo f = new FileInfo(s);
         
-        files.Add(new FileItem());
+        //files.Add(new FileItem());
 
       }
 
