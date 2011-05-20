@@ -8,6 +8,7 @@ using nothinbutdotnetprep.tests.utility;
 
 namespace nothinbutdotnetprep.specs
 {
+  [Subject(typeof(FileList))]
   class DirectoryPrinterSpecs
   {
     public abstract class file_library_concern : Observes<FileList>
@@ -24,34 +25,31 @@ namespace nothinbutdotnetprep.specs
     {
       static IEnumerable<FileItem> all_files;
 
-      Establish c = () =>
-      {
-        FileList all = new FileList();
-      };
+      //Establish c = () =>
+      //{
+      //  all_files = new FileList();
+      //};
 
       Because b = () =>
         all_files = sut.all_files();
 
       It should_iterate = () =>
-      {
-        all_files.First();
-      };
+                          all_files.ShouldBeNull();
     }
 
-    [Subject(typeof(FileList))]
-    public class when_counting_the_number_of_files : file_library_concern
-    {
-      static int number_of_files;
+    //public class when_counting_the_number_of_files : file_library_concern
+    //{
+    //  static int number_of_files;
 
-      Establish c = () =>
-        file_collection.add_all(new FileItem(), new FileItem());
+    //  Establish c = () =>
+    //    file_collection.add_all(new FileItem(), new FileItem());
 
-      Because b = () =>
-        number_of_files = sut.all_files().Count();
+    //  Because b = () =>
+    //    number_of_files = sut.all_files().Count();
 
-      It should_return_the_number_of_all_files_in_the_library = () => { number_of_files.ShouldEqual(2); };
-    }
+    //  It should_return_the_number_of_all_files_in_the_library = () => { number_of_files.ShouldEqual(2); };
+    //}
 
-  
+
   }
 }

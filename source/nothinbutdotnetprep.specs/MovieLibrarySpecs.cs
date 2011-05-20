@@ -208,25 +208,25 @@ namespace nothinbutdotnetprep.specs
              * movies using different criteria. Feel free to change/remove explicit methods if you find a way to encompass searching
              * without the need for using explicit methods. For this exercise, no linq queries are allowed!!.*/
 
-      It should_be_able_to_find_all_movies_published_by_pixar = () =>
-      {
-        var criteria = Where<Movie>.has_a(x => x.production_studio)
-                                   .equal_to(ProductionStudio.Pixar);
+      //It should_be_able_to_find_all_movies_published_by_pixar = () =>
+      //{
+      //  var criteria = Where<Movie>.has_a(x => x.production_studio)
+      //                             .equal_to(ProductionStudio.Pixar);
 
-        var results = sut.all_movies().all_matching(criteria);
+      //  var results = sut.all_movies().all_matching(criteria);
 
-        results.ShouldContainOnly(cars, a_bugs_life);
-      };
+      //  results.ShouldContainOnly(cars, a_bugs_life);
+      //};
 
-      It should_be_able_to_find_all_movies_published_by_pixar_or_disney = () =>
-      {
-        var criteria = Where<Movie>.has_a(x => x.production_studio)
-                                   .equal_to_any(ProductionStudio.Pixar,ProductionStudio.Disney);
+      //It should_be_able_to_find_all_movies_published_by_pixar_or_disney = () =>
+      //{
+      //  var criteria = Where<Movie>.has_a(x => x.production_studio)
+      //                             .equal_to_any(ProductionStudio.Pixar,ProductionStudio.Disney);
 
-        var results = sut.all_movies().all_matching(criteria);
+      //  var results = sut.all_movies().all_matching(criteria);
 
-        results.ShouldContainOnly(a_bugs_life, pirates_of_the_carribean, cars);
-      };
+      //  results.ShouldContainOnly(a_bugs_life, pirates_of_the_carribean, cars);
+      //};
 
       It should_be_able_to_find_all_movies_not_published_by_pixar = () =>
       {
